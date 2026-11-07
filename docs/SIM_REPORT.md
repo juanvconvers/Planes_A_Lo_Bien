@@ -7,7 +7,7 @@
 | Aleatorio · Relajado | 1000 | 0 | 0 | 0 | 0 | 121 | 83 | 253 | 689 | 19.9 | 3.4 | 9 | 0 |
 | Aleatorio · Evento 9×9 | 1000 | 0 | 0 | 0 | 0 | 90 | 71 | 160 | 502 | 18.1 | 1.7 | 6 | 0 |
 
-Generado con `dotnet run --project tools/dotnet/Tesela.Tools -- sim 10000` en 8.3 s.
+Generado con `dotnet run --project tools/dotnet/Tesela.Tools -- sim 10000` en 10.1 s.
 
 **Qué se verifica en cada partida**
 - *Fines falsos*: el juego terminó pero una comprobación independiente celda a celda (sin máscaras de bits) encuentra una jugada, o el bot no encontró jugada sin que el juego hubiera terminado.

@@ -102,6 +102,8 @@ namespace Tesela.UI
         {
             Refresh();
             UpdateBanner();
+            // Consentimiento antes de cargar anuncios: después de la primera partida, nunca durante el tutorial.
+            if (Ctx.Profile.TutorialDone && !Ctx.Profile.ConsentAsked && Nav.Top == this) Nav.Push(new ConsentScreen());
         }
 
         public override void Refresh()

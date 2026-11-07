@@ -78,7 +78,9 @@ namespace Tesela.UI
                 BoardsEmptied = state["emptied"].AsInt();
                 Finished = false;
                 _ctx.AdState.ReviveUsedThisRun = state["reviveUsed"].AsBool();
-                return !Session.IsOver || Session.CanRevive;
+                if (!Session.IsOver || Session.CanRevive) return true;
+                _ctx.Saves.ClearRun();
+                return false;
             }
             catch (Exception e) when (e is FormatException || e is KeyNotFoundException || e is ArgumentException)
             {

@@ -41,9 +41,10 @@ namespace Tesela.UI
 
             var socketLayer = Ui.Rect(Root, "sockets").Stretch();
             socketLayer.gameObject.AddComponent<Canvas>();
-            var rowLayer = Ui.Rect(Root, "glow").Stretch();
             var tileLayer = Ui.Rect(Root, "tiles").Stretch();
             tileLayer.gameObject.AddComponent<Canvas>();
+            // El resaltado va encima de los azulejos: las líneas que se completarían casi siempre ya están llenas.
+            var rowLayer = Ui.Rect(Root, "glow").Stretch();
             var ghostLayer = Ui.Rect(Root, "ghost").Stretch();
 
             int n = width * height;

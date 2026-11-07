@@ -169,8 +169,7 @@ namespace Tesela.UI
                 return;
             }
             _nav.Reset(new HomeScreen());
-            if (!_ctx.Profile.ConsentAsked) _nav.Push(new ConsentScreen());
-            else
+            if (_ctx.Profile.ConsentAsked)
             {
                 var resume = new GameController(_ctx);
                 if (resume.TryResume()) _nav.Push(new GameScreen(resume));
@@ -205,11 +204,12 @@ namespace Tesela.UI
             safe.gameObject.AddComponent<SafeArea>();
             _screens = safe;
 
-            Canvas.ForceUpdateCanvases();
-            Rect r = ((RectTransform)canvasGo.transform).rect;
+            // Tamaño lógico calculado con la misma fórmula del CanvasScaler (el lienzo aún no se ha redimensionado en este frame).
+            float sw = Mathf.Max(1, Screen.width), sh = Mathf.Max(1, Screen.height);
+            float scale = scaler.matchWidthOrHeight < 0.5f ? sw / 1080f : sh / 1920f;
             Rect sa = Screen.safeArea;
-            Layout.Width = r.width * (sa.width / Mathf.Max(1, Screen.width));
-            Layout.Height = r.height * (sa.height / Mathf.Max(1, Screen.height));
+            Layout.Width = sa.width / scale;
+            Layout.Height = sa.height / scale;
             if (Layout.Width < 100 || Layout.Height < 100) { Layout.Width = 1080; Layout.Height = 1920; }
 
             if (FindFirstObjectByType<EventSystem>() == null)

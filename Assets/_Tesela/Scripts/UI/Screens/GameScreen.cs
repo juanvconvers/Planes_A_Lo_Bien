@@ -29,6 +29,7 @@ namespace Tesela.UI
         private int _dragSlot = -1;
         private Vector2Int _dragOrigin;
         private bool _dragValid;
+        private bool _dragMoved;
         private Targeting _targeting;
         private bool _broomColumns;
         private bool _busy;
@@ -251,6 +252,8 @@ namespace Tesela.UI
             if (_targeting == Targeting.Hold) { DoHold(slot); return; }
             if (s.Tray[slot].IsEmpty || s.IsOver) return;
             _dragSlot = slot;
+            _dragValid = false;
+            _dragMoved = false;
             _drag.Show(s.Tray[slot], _board.Cell);
             _drag.Root.anchoredPosition = DragPosition(FxLocal(e), s.Tray[slot].Shape);
             Motion.Instance.Scale(_drag.Root, Vector3.one * TrayView.PreviewScale, Vector3.one, 0.12f, Ease.Out, 0f, null, true);
@@ -269,6 +272,7 @@ namespace Tesela.UI
         private void OnSlotDrag(int slot, PointerEventData e)
         {
             if (slot != _dragSlot) return;
+            _dragMoved = true;
             var s = _game.Session;
             var shape = s.Tray[slot].Shape;
             Vector2 pos = DragPosition(FxLocal(e), shape);
@@ -315,8 +319,17 @@ namespace Tesela.UI
                 CommitPlace(slot, _dragOrigin.x, _dragOrigin.y);
                 return;
             }
+            // Toque sin arrastre en el evento de giro libre: gira la pieza.
+            bool tapRotate = !_dragMoved && s.Rules.FreeRotation && s.RotateSlot(slot);
+            if (tapRotate)
+            {
+                _drag.Root.gameObject.SetActive(false);
+                SyncAll();
+                Motion.Instance.Scale(_tray.Pieces[slot].Root, Vector3.one * 0.8f, Vector3.one, 0.18f, Ease.Settle);
+                return;
+            }
             // Se soltó fuera: vuelve a la bandeja con rebote.
-            Ctx.Audio?.Play(Sfx.Invalid, 0.6f);
+            if (_dragMoved) Ctx.Audio?.Play(Sfx.Invalid, 0.6f);
             Vector3 world = _tray.Slots[slot].TransformPoint(Vector3.zero);
             Vector2 home = _fx.InverseTransformPoint(world);
             _busy = true;
@@ -388,7 +401,7 @@ namespace Tesela.UI
                     _tiles.Text = Loc.Number(Ctx.Profile.Tiles + _tilesShown);
                     if (arrived % 4 == 1) Motion.Instance.Scale(_tilesTarget, Vector3.one * 1.25f, Vector3.one, 0.14f, Ease.Settle);
                 });
-                _particles.Burst(Ui.Art.White, Ctx.Data != null ? Palette.Glaze(c.Glaze).ToColor() : Color.white, from, 3, _board.Cell * 0.8f);
+                _particles.Burst(Ui.Art.White, Palette.Glaze(c.Glaze).ToColor(), from, 3, _board.Cell * 0.8f);
             }
         }
 

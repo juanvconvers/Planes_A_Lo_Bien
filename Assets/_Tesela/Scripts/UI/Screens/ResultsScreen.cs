@@ -138,7 +138,6 @@ namespace Tesela.UI
             if (!Ctx.Profile.ConsentAsked)
             {
                 Nav.Reset(new HomeScreen());
-                Nav.Push(new ConsentScreen());
                 return;
             }
             var next = new GameController(Ctx);

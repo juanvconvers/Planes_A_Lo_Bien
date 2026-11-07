@@ -64,3 +64,41 @@ fuente dinámica, para que nunca quede texto invisible.
 
 **D-11 — Identificador de la app** `com.jdvelasquez.tesela` (cambiable en `ExternalIds.asset` →
 `androidPackageName`; el script de build lo aplica).
+
+## Fases 1–9
+
+**D-12 — Racha.** La tabla ×1, ×1,5, ×2… tope ×4 se implementa como +0,5 por cada jugada consecutiva que limpia
+(`streakMultipliers` en `ScoringConfig.json`). La racha sobrevive a 2 jugadas sin limpiar y se rompe en la 3.ª.
+
+**D-13 — Reserva.** El potenciador Reserva gasta una carga para desbloquear la casilla durante la partida; después, guardar o
+intercambiar es gratis. Por eso la detección de fin de partida también mira la pieza de la reserva.
+
+**D-14 — Deshacer.** Guarda hasta 3 jugadas. Los demás potenciadores borran el historial de deshacer (no se puede "deshacer un
+martillo" y recuperar la carga).
+
+**D-15 — Economía.** El primer `Economy.json` inflaba (34.000 monedas al día 30 para el jugador típico). Se redujeron recompensas
+de misiones, tope por partida (40), sets de azulejos (300 azulejos → 100 monedas), XP del pase (450 por escalón) y logros. Rango
+sano decidido: **300–4.000 monedas** al día 30 para el jugador típico, que compra temas al poder. Resultado: 3.542
+(`docs/ECONOMY_REPORT.md`). El jugador "intenso" (12 partidas/día) acumula más: es intencional, compra todo lo cosmético antes.
+
+**D-16 — Validador de niveles.** El bot del validador persigue los objetivos (bonifica líneas con agrietadas, barro o el esmalte
+buscado), como haría una persona. El Monte Carlo usa ruido moderado. Los niveles se ajustan para ≥ 80 % y se exige ≥ 70 % en el
+test con 60 partidas.
+
+**D-17 — Consentimiento.** Se pide después de la primera partida (al volver a Inicio o al empezar la segunda), nunca durante el
+tutorial. Los anuncios no se inicializan hasta entonces. Con el plugin de Google Mobile Ads se usa UMP (CMP certificada, TCF v2.3);
+sin él, el paso informa y continúa (anuncios simulados).
+
+**D-18 — Intersticiales.** La espera inicial de 150 s cuenta desde el inicio de la sesión, y la regla de "2 partidas entre uno y
+otro" se aplica desde el primero mostrado. Con las 3 primeras partidas y la primera sesión bloqueadas, el primer intersticial
+posible es en la 2.ª sesión tras ≥ 3 partidas totales.
+
+**D-19 — Ofertas.** Solo en momentos de logro (capítulo completo, récord, escalón de pase) o regalo de regreso para jugadores en
+riesgo. Nunca tras perder. Si se muestra una oferta, ese tránsito no muestra intersticial.
+
+**D-20 — Guardado en nube de Play Games** queda fuera de esta versión (requiere la API de partidas guardadas y resolución de
+conflictos real). El juego guarda localmente con escritura atómica + copia .bak + checksum.
+
+**D-21 — Chequeo de compilación local.** La capa Unity se compila contra UnityEngine 2021.3 y UnityEditor 2021.1 (referencias
+NuGet) más stubs de uGUI/TMP/TestRunner. Se evitan APIs exclusivas de Unity 6 salvo en `ProjectSetup.cs` (excluido del chequeo
+por usar `NamedBuildTarget`). La instalación de paquetes usa `Client.Add` uno a uno (compatible con todas las versiones).
