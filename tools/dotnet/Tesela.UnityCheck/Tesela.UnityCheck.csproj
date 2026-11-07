@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Chequeo de compilación de la capa Unity (Services, UI, Editor, PlayMode) sin el editor:
+    referencias de UnityEngine 2021.3 / UnityEditor 2021.1 (NuGet, ver tools/fetch_unity_refs.sh) + stubs de uGUI/TMP.
+    Los adaptadores de SDK (#if TESELA_*) no se compilan aquí: requieren los paquetes reales (QA_PENDIENTE.md).
+    ProjectSetup.cs se excluye porque usa NamedBuildTarget (Unity 2021.2+), ausente en la referencia de UnityEditor 2021.1.
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);CS0618;CS0436</NoWarn>
+    <DefineConstants>$(DefineConstants);UNITY_ANDROID;UNITY_EDITOR</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(AssetsRoot)Scripts/Services/**/*.cs" />
+    <Compile Include="$(AssetsRoot)Scripts/UI/**/*.cs" />
+    <Compile Include="$(AssetsRoot)Scripts/Editor/**/*.cs" Exclude="$(AssetsRoot)Scripts/Editor/ProjectSetup.cs" />
+    <Compile Include="$(AssetsRoot)Tests/PlayMode/**/*.cs" />
+    <Compile Include="ProjectSetupShim.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Tesela.Core/Tesela.Core.csproj" />
+    <ProjectReference Include="../Tesela.Gameplay/Tesela.Gameplay.csproj" />
+    <ProjectReference Include="../Tesela.Meta/Tesela.Meta.csproj" />
+    <ProjectReference Include="../Tesela.Monetization/Tesela.Monetization.csproj" />
+    <ProjectReference Include="../UnityStubs/UnityStubs.csproj" />
+    <PackageReference Include="NUnit" Version="3.14.0" />
+    <Reference Include="$(MSBuildThisFileDirectory)../.refs/unityengine.modules/lib/netstandard2.0/*.dll" Private="false" />
+    <Reference Include="$(MSBuildThisFileDirectory)../.refs/unity3d.sdk/lib/UnityEditor.dll" Private="false" />
+  </ItemGroup>
+</Project>

@@ -52,6 +52,8 @@ namespace Tesela.Monetization
         void Restore(Action<string> onRestored, Action<bool> onDone);
         /// <summary>Vencimiento de la suscripción según el recibo de Play (UTC). null si no hay suscripción activa.</summary>
         DateTime? SubscriptionExpiryUtc(string productId);
+        /// <summary>Compras que llegan sin una solicitud en curso (pendientes aprobadas más tarde, reinicios a mitad de compra). Hay que entregarlas igual.</summary>
+        event Action<string> DeferredPurchase;
     }
 
     public enum ConsentStatus
@@ -114,6 +116,10 @@ namespace Tesela.Monetization
         public PurchaseStatus NextResult = PurchaseStatus.Success;
         public Func<DateTime> Now = () => DateTime.UtcNow;
         public bool IsInitialized { get; private set; }
+        public event Action<string> DeferredPurchase;
+
+        /// <summary>Simula una compra pendiente que se aprueba más tarde.</summary>
+        public void SimulateDeferred(string productId) => DeferredPurchase?.Invoke(productId);
 
         public void Initialize(IReadOnlyList<StoreProduct> products, Action<bool> onReady)
         {

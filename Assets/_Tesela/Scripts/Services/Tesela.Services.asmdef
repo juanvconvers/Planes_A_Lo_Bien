@@ -31,7 +31,8 @@
         { "name": "com.google.firebase.analytics", "expression": "12.0.0", "define": "TESELA_FIREBASE" },
         { "name": "com.google.play.review", "expression": "1.8.0", "define": "TESELA_PLAYREVIEW" },
         { "name": "com.google.play.appupdate", "expression": "1.8.0", "define": "TESELA_PLAYUPDATE" },
-        { "name": "com.google.play.games", "expression": "2.0.0", "define": "TESELA_PGS" }
+        { "name": "com.google.play.games", "expression": "2.0.0", "define": "TESELA_PGS" },
+        { "name": "com.google.ads.mobile", "expression": "9.0.0", "define": "TESELA_UMP" }
     ],
     "noEngineReferences": false
 }

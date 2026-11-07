@@ -1,0 +1,25 @@
+{
+    "name": "Tesela.UI",
+    "rootNamespace": "Tesela.UI",
+    "references": [
+        "Tesela.Core",
+        "Tesela.Gameplay",
+        "Tesela.Meta",
+        "Tesela.Monetization",
+        "Tesela.Services",
+        "UnityEngine.UI",
+        "Unity.TextMeshPro",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        { "name": "com.unity.inputsystem", "expression": "1.7.0", "define": "TESELA_INPUTSYSTEM" }
+    ],
+    "noEngineReferences": false
+}

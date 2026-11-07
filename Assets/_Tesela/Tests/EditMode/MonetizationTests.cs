@@ -279,6 +279,10 @@ namespace Tesela.Tests
             Assert.IsTrue(fresh.ClubActive(Now));
             Assert.AreEqual(0, fresh.PurchaseCount, "restaurar no cuenta como compra nueva");
             Fulfillment.Restore(null, fresh, Now, null);
+            string deferred = null;
+            store.DeferredPurchase += id => deferred = id;
+            store.SimulateDeferred("tesela_coins_2");
+            Assert.AreEqual("tesela_coins_2", deferred);
         }
     }
 

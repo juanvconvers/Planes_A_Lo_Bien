@@ -1,0 +1,8 @@
+{
+  "_comment": "Se muestra en Ajustes > Créditos. Mantener sincronizado con THIRD_PARTY_NOTICES.md.",
+  "credits": [
+    "Fraunces — The Fraunces Project Authors (Undercase Type) — SIL Open Font License 1.1 — github.com/undercasetype/Fraunces",
+    "Bricolage Grotesque — The Bricolage Grotesque Project Authors (Ateliertriay) — SIL Open Font License 1.1 — github.com/ateliertriay/bricolage",
+    "Azulejos, iconos, marcos, sonidos y música: generados por código para Tesela"
+  ]
+}

@@ -23,6 +23,7 @@ namespace Tesela.Tools
                 case "sim": return RunSimulation(args.Length > 1 ? int.Parse(args[1]) : 10000);
                 case "levels": return LevelTool.Run(Paths.Root);
                 case "economy": return EconomyTool.Run(Paths.Root);
+                case "preview": return PreviewTool.Run(args.Length > 1 ? args[1] : "preview.png");
                 default:
                     Console.Error.WriteLine("Comando desconocido: " + cmd);
                     return 2;

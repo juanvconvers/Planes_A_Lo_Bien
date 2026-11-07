@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEditor.PackageManager;
@@ -10,6 +11,7 @@ namespace Tesela.EditorTools
     /// Instala los paquetes de Unity por nombre (Unity elige la versión compatible con el editor) y las
     /// TMP Essential Resources. Se ejecuta sola la primera vez que se abre el proyecto; el código que depende de
     /// cada paquete está protegido por versionDefines, así que el proyecto compila antes y después de instalar.
+    /// Se instalan uno a uno: si alguno falla, los demás siguen.
     /// </summary>
     [InitializeOnLoad]
     public static class PackageSetup
@@ -26,47 +28,61 @@ namespace Tesela.EditorTools
             "com.unity.services.levelplay"
         };
 
-        private static AddAndRemoveRequest _request;
+        private static readonly Queue<string> Pending = new Queue<string>();
+        private static AddRequest _current;
+        private static readonly List<string> Failed = new List<string>();
 
         static PackageSetup()
         {
             if (Application.isBatchMode || File.Exists(MarkerPath)) return;
-            EditorApplication.delayCall += () => Install(false);
+            EditorApplication.delayCall += Install;
         }
 
         [MenuItem("Tesela/Setup/Instalar paquetes")]
-        public static void InstallFromMenu() => Install(true);
+        public static void Install()
+        {
+            if (_current != null && !_current.IsCompleted) return;
+            Pending.Clear();
+            Failed.Clear();
+            foreach (string p in Packages) Pending.Enqueue(p);
+            Debug.Log("[Tesela] Instalando paquetes…");
+            EditorApplication.update += Poll;
+            Next();
+        }
 
         /// <summary>Para modo batch: -executeMethod Tesela.EditorTools.PackageSetup.InstallBlocking</summary>
         public static void InstallBlocking()
         {
-            var request = Client.AddAndRemove(Packages, null);
-            while (!request.IsCompleted) System.Threading.Thread.Sleep(200);
-            if (request.Status == StatusCode.Failure) Debug.LogError("[Tesela] Paquetes: " + request.Error?.message);
+            foreach (string p in Packages)
+            {
+                var request = Client.Add(p);
+                while (!request.IsCompleted) System.Threading.Thread.Sleep(200);
+                if (request.Status == StatusCode.Failure) Debug.LogWarning("[Tesela] " + p + ": " + request.Error?.message);
+            }
             ImportTmpEssentials();
             File.WriteAllText(MarkerPath, "ok");
         }
 
-        private static void Install(bool interactive)
+        private static void Next()
         {
-            if (_request != null && !_request.IsCompleted) return;
-            _request = Client.AddAndRemove(Packages, null);
-            EditorApplication.update += Poll;
-            if (interactive) Debug.Log("[Tesela] Instalando paquetes…");
+            if (Pending.Count == 0)
+            {
+                EditorApplication.update -= Poll;
+                _current = null;
+                ImportTmpEssentials();
+                File.WriteAllText(MarkerPath, "ok");
+                if (Failed.Count > 0)
+                    Debug.LogWarning("[Tesela] No se instalaron: " + string.Join(", ", Failed) + ". El juego sigue funcionando con las implementaciones falsas.");
+                return;
+            }
+            _current = Client.Add(Pending.Dequeue());
         }
 
         private static void Poll()
         {
-            if (_request == null || !_request.IsCompleted) return;
-            EditorApplication.update -= Poll;
-            if (_request.Status == StatusCode.Failure)
-            {
-                Debug.LogWarning("[Tesela] No se pudieron instalar todos los paquetes: " + _request.Error?.message +
-                                 ". El juego sigue funcionando con las implementaciones falsas.");
-            }
-            ImportTmpEssentials();
-            File.WriteAllText(MarkerPath, "ok");
-            _request = null;
+            if (_current == null || !_current.IsCompleted) return;
+            if (_current.Status == StatusCode.Failure) Failed.Add(_current.Error?.message ?? "?");
+            Next();
         }
 
         [MenuItem("Tesela/Setup/Importar TMP Essential Resources")]
