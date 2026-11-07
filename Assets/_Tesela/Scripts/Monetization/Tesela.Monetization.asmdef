@@ -1,0 +1,17 @@
+{
+    "name": "Tesela.Monetization",
+    "rootNamespace": "Tesela.Monetization",
+    "references": [
+        "Tesela.Core",
+        "Tesela.Meta"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

@@ -1,0 +1,47 @@
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.apk
+*.aab
+*.unitypackage
+crashlytics-build.properties
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+.vs/
+.idea/
+.vscode/
+# Firma: la keystore NUNCA va al repo
+*.keystore
+*.jks
+keystore.properties
+# Herramientas locales (.NET) — sus .csproj sí se versionan
+!/tools/dotnet/**/*.csproj
+/tools/dotnet/**/bin/
+/tools/dotnet/**/obj/
+/tools/dotnet/.refs/
+/tools/dotnet/TestResults/
+__pycache__/
+# Arte entrante: solo se versiona el README
+/ArtDrop/*
+!/ArtDrop/README.md

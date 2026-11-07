@@ -1,0 +1,29 @@
+{
+    "name": "Tesela.Editor",
+    "rootNamespace": "Tesela.EditorTools",
+    "references": [
+        "Tesela.Core",
+        "Tesela.Gameplay",
+        "Tesela.Meta",
+        "Tesela.Monetization",
+        "Tesela.Services",
+        "Tesela.UI",
+        "Unity.TextMeshPro",
+        "Unity.TextMeshPro.Editor",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Core.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        { "name": "com.unity.render-pipelines.universal", "expression": "17.0.0", "define": "TESELA_URP" }
+    ],
+    "noEngineReferences": false
+}

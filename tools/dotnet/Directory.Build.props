@@ -1,0 +1,12 @@
+<Project>
+  <!-- Réplica local de las reglas de compilación de Unity 6: C# 9 y .NET Standard 2.1. -->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AssetsRoot>$(MSBuildThisFileDirectory)../../Assets/_Tesela/</AssetsRoot>
+  </PropertyGroup>
+</Project>

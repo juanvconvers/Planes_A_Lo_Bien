@@ -1,0 +1,11 @@
+{
+  "_comment": "Reglas públicas de puntuación (Parte 2). La racha sube con cada jugada que limpia y se rompe tras 3 jugadas seguidas sin limpiar.",
+  "pointsPerCell": 1,
+  "lineBonus": [0, 10, 30, 60, 100],
+  "extraLineBonus": 50,
+  "streakMultipliers": [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0],
+  "streakBreakAfterMoves": 3,
+  "emptyBoardBonus": 300,
+  "goldCellBonus": 25,
+  "regionCountsAsLine": true
+}

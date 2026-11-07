@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>Tesela.Tests.EditMode</AssemblyName>
+    <IsPackable>false</IsPackable>
+    <DefineConstants>$(DefineConstants);TESELA_DOTNET</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(AssetsRoot)Tests/EditMode/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="NUnit" Version="3.14.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+    <PackageReference Include="coverlet.collector" Version="6.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Tesela.Core/Tesela.Core.csproj" />
+    <ProjectReference Include="../Tesela.Gameplay/Tesela.Gameplay.csproj" />
+    <ProjectReference Include="../Tesela.Meta/Tesela.Meta.csproj" />
+    <ProjectReference Include="../Tesela.Monetization/Tesela.Monetization.csproj" />
+  </ItemGroup>
+</Project>

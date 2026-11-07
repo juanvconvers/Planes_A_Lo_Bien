@@ -1,0 +1,17 @@
+{
+    "name": "Tesela.Meta",
+    "rootNamespace": "Tesela.Meta",
+    "references": [
+        "Tesela.Core",
+        "Tesela.Gameplay"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Herramientas de línea de comandos: simulación (SIM_REPORT), generación/validación de niveles y simulador de economía. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Tesela.Core/Tesela.Core.csproj" />
+    <ProjectReference Include="../Tesela.Gameplay/Tesela.Gameplay.csproj" />
+    <ProjectReference Include="../Tesela.Meta/Tesela.Meta.csproj" />
+    <ProjectReference Include="../Tesela.Monetization/Tesela.Monetization.csproj" />
+  </ItemGroup>
+</Project>
