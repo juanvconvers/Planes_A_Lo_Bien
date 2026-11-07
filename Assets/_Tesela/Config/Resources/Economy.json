@@ -1,0 +1,620 @@
+{
+ "_comment": "Economía de Tesela. Monedas (blandas) y Azulejos (solo jugando, no se venden). Revisar con el simulador: dotnet run --project tools/dotnet/Tesela.Tools -- economy",
+ "coinsScoreDivisor": 50,
+ "runCoinCap": 40,
+ "boosterPrices": {
+  "rotate": 80,
+  "undo": 100,
+  "hammer": 120,
+  "newtray": 150,
+  "broom": 200,
+  "reserve": 120
+ },
+ "dailyFreeBoosters": {
+  "undo": 1,
+  "rotate": 1,
+  "hammer": 0,
+  "broom": 0,
+  "newtray": 0,
+  "reserve": 1
+ },
+ "revivePrice": 300,
+ "protectorPrice": 250,
+ "xpScoreDivisor": 25,
+ "xpPerLine": 2,
+ "levelXpBase": 150,
+ "levelXpGrowth": 1.12,
+ "tilesPerLine": 1,
+ "levelCompleteTiles": 10,
+ "dailyMissionCount": 3,
+ "weeklyMissionCount": 3,
+ "dailyMissions": [
+  {
+   "id": "d_games3",
+   "metric": "games",
+   "target": 3,
+   "reward": {
+    "coins": 30
+   }
+  },
+  {
+   "id": "d_lines20",
+   "metric": "lines",
+   "target": 20,
+   "reward": {
+    "coins": 35
+   }
+  },
+  {
+   "id": "d_score800",
+   "metric": "score_run",
+   "target": 800,
+   "reward": {
+    "coins": 40
+   }
+  },
+  {
+   "id": "d_pieces60",
+   "metric": "pieces",
+   "target": 60,
+   "reward": {
+    "coins": 30
+   }
+  },
+  {
+   "id": "d_streak4",
+   "metric": "streak_run",
+   "target": 4,
+   "reward": {
+    "coins": 40,
+    "boosters": {
+     "undo": 1
+    }
+   }
+  },
+  {
+   "id": "d_daily1",
+   "metric": "daily",
+   "target": 1,
+   "reward": {
+    "coins": 35
+   }
+  },
+  {
+   "id": "d_level1",
+   "metric": "levels",
+   "target": 1,
+   "reward": {
+    "coins": 35
+   }
+  },
+  {
+   "id": "d_empty1",
+   "metric": "empty_board",
+   "target": 1,
+   "reward": {
+    "coins": 45
+   }
+  },
+  {
+   "id": "d_booster1",
+   "metric": "boosters",
+   "target": 1,
+   "reward": {
+    "coins": 25
+   }
+  }
+ ],
+ "weeklyMissions": [
+  {
+   "id": "w_games20",
+   "metric": "games",
+   "target": 20,
+   "reward": {
+    "coins": 150,
+    "protectors": 1
+   }
+  },
+  {
+   "id": "w_lines150",
+   "metric": "lines",
+   "target": 150,
+   "reward": {
+    "coins": 180
+   }
+  },
+  {
+   "id": "w_stars12",
+   "metric": "stars",
+   "target": 12,
+   "reward": {
+    "coins": 180,
+    "boosters": {
+     "hammer": 1,
+     "broom": 1
+    }
+   }
+  },
+  {
+   "id": "w_daily5",
+   "metric": "daily",
+   "target": 5,
+   "reward": {
+    "coins": 180,
+    "protectors": 1
+   }
+  },
+  {
+   "id": "w_score2500",
+   "metric": "score_run",
+   "target": 2500,
+   "reward": {
+    "coins": 210
+   }
+  },
+  {
+   "id": "w_empty5",
+   "metric": "empty_board",
+   "target": 5,
+   "reward": {
+    "coins": 180
+   }
+  }
+ ],
+ "chestPriceCoins": 400,
+ "chest": [
+  {
+   "id": "coins_small",
+   "weight": 40,
+   "reward": {
+    "coins": 250
+   }
+  },
+  {
+   "id": "coins_big",
+   "weight": 15,
+   "reward": {
+    "coins": 700
+   }
+  },
+  {
+   "id": "boosters_mix",
+   "weight": 25,
+   "reward": {
+    "boosters": {
+     "undo": 1,
+     "rotate": 1,
+     "hammer": 1
+    }
+   }
+  },
+  {
+   "id": "protector",
+   "weight": 12,
+   "reward": {
+    "protectors": 1
+   }
+  },
+  {
+   "id": "tiles",
+   "weight": 7,
+   "reward": {
+    "tiles": 40
+   }
+  },
+  {
+   "id": "cosmetic_trail",
+   "weight": 1,
+   "reward": {
+    "cosmetic": "fx_terracotta_trail"
+   }
+  }
+ ],
+ "streakDay7": {
+  "coins": 300,
+  "protectors": 1,
+  "boosters": {
+   "newtray": 1
+  }
+ },
+ "achievements": [
+  {
+   "id": "first_steps",
+   "metric": "games",
+   "tiers": [
+    1,
+    25,
+    100,
+    500
+   ],
+   "rewardCoins": 24
+  },
+  {
+   "id": "line_artisan",
+   "metric": "lines",
+   "tiers": [
+    50,
+    500,
+    2500,
+    10000
+   ],
+   "rewardCoins": 30
+  },
+  {
+   "id": "clean_slate",
+   "metric": "boards_emptied",
+   "tiers": [
+    1,
+    10,
+    50
+   ],
+   "rewardCoins": 36
+  },
+  {
+   "id": "streak_master",
+   "metric": "max_streak",
+   "tiers": [
+    5,
+    10,
+    20
+   ],
+   "rewardCoins": 36
+  },
+  {
+   "id": "restorer",
+   "metric": "levels_completed",
+   "tiers": [
+    5,
+    20,
+    60
+   ],
+   "rewardCoins": 48
+  },
+  {
+   "id": "classic_score",
+   "metric": "best_classic",
+   "tiers": [
+    1000,
+    3000,
+    8000
+   ],
+   "rewardCoins": 42
+  },
+  {
+   "id": "collector",
+   "metric": "tilesets",
+   "tiers": [
+    1,
+    10,
+    40
+   ],
+   "rewardCoins": 36
+  },
+  {
+   "id": "loyal",
+   "metric": "max_day_streak",
+   "tiers": [
+    3,
+    7,
+    30
+   ],
+   "rewardCoins": 48
+  }
+ ],
+ "pass": {
+  "seasonDays": 28,
+  "xpPerTier": 450,
+  "tiers": [
+   {
+    "free": {
+     "coins": 24
+    },
+    "premium": {
+     "coins": 60
+    }
+   },
+   {
+    "free": {
+     "coins": 27
+    },
+    "premium": {
+     "coins": 66
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "hammer": 1
+     }
+    },
+    "premium": {
+     "coins": 72
+    }
+   },
+   {
+    "free": {
+     "coins": 33
+    },
+    "premium": {
+     "coins": 78
+    }
+   },
+   {
+    "free": {
+     "coins": 36
+    },
+    "premium": {
+     "coins": 114,
+     "boosters": {
+      "undo": 1,
+      "hammer": 1
+     }
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "reserve": 1
+     }
+    },
+    "premium": {
+     "coins": 90
+    }
+   },
+   {
+    "free": {
+     "coins": 42
+    },
+    "premium": {
+     "coins": 96
+    }
+   },
+   {
+    "free": {
+     "coins": 45
+    },
+    "premium": {
+     "coins": 102
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "hammer": 1
+     }
+    },
+    "premium": {
+     "coins": 108
+    }
+   },
+   {
+    "free": {
+     "coins": 51
+    },
+    "premium": {
+     "cosmetic": "theme_patio_nocturno"
+    }
+   },
+   {
+    "free": {
+     "coins": 54
+    },
+    "premium": {
+     "coins": 120
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "reserve": 1
+     }
+    },
+    "premium": {
+     "coins": 126
+    }
+   },
+   {
+    "free": {
+     "coins": 60
+    },
+    "premium": {
+     "coins": 132
+    }
+   },
+   {
+    "free": {
+     "coins": 63
+    },
+    "premium": {
+     "coins": 138
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "hammer": 1
+     }
+    },
+    "premium": {
+     "coins": 174,
+     "boosters": {
+      "undo": 1,
+      "hammer": 1
+     }
+    }
+   },
+   {
+    "free": {
+     "coins": 69
+    },
+    "premium": {
+     "coins": 150
+    }
+   },
+   {
+    "free": {
+     "coins": 72
+    },
+    "premium": {
+     "coins": 156
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "reserve": 1
+     }
+    },
+    "premium": {
+     "coins": 162
+    }
+   },
+   {
+    "free": {
+     "coins": 78
+    },
+    "premium": {
+     "coins": 168
+    }
+   },
+   {
+    "free": {
+     "coins": 81
+    },
+    "premium": {
+     "cosmetic": "frame_ceramica_dorada"
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "hammer": 1
+     }
+    },
+    "premium": {
+     "coins": 180
+    }
+   },
+   {
+    "free": {
+     "coins": 87
+    },
+    "premium": {
+     "coins": 186
+    }
+   },
+   {
+    "free": {
+     "coins": 90
+    },
+    "premium": {
+     "coins": 192
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "reserve": 1
+     }
+    },
+    "premium": {
+     "coins": 198
+    }
+   },
+   {
+    "free": {
+     "coins": 96
+    },
+    "premium": {
+     "coins": 234,
+     "boosters": {
+      "undo": 1,
+      "hammer": 1
+     }
+    }
+   },
+   {
+    "free": {
+     "coins": 99
+    },
+    "premium": {
+     "coins": 210
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "hammer": 1
+     }
+    },
+    "premium": {
+     "coins": 216
+    }
+   },
+   {
+    "free": {
+     "coins": 105
+    },
+    "premium": {
+     "coins": 222
+    }
+   },
+   {
+    "free": {
+     "coins": 108
+    },
+    "premium": {
+     "coins": 228
+    }
+   },
+   {
+    "free": {
+     "boosters": {
+      "reserve": 1
+     }
+    },
+    "premium": {
+     "cosmetic": "theme_mosaico_temporada",
+     "coins": 300
+    }
+   }
+  ]
+ },
+ "club": {
+  "passXpMultiplier": 1.5,
+  "dailyCoins": 100
+ },
+ "themes": [
+  {
+   "id": "sand",
+   "price": 0
+  },
+  {
+   "id": "theme_cobalto_antiguo",
+   "price": 3000
+  },
+  {
+   "id": "theme_oliva_huerto",
+   "price": 2000
+  },
+  {
+   "id": "theme_ciruela_tarde",
+   "price": 2500
+  },
+  {
+   "id": "theme_turquesa_fuente",
+   "price": 5000
+  },
+  {
+   "id": "theme_club_terracota",
+   "price": 0,
+   "clubOnly": true
+  }
+ ],
+ "tileSetSize": 300,
+ "tileSetBonusCoins": 100,
+ "healthySavings": [
+  300,
+  4000
+ ]
+}

@@ -1,0 +1,201 @@
+{
+ "_comment": "IDs de producto de Play Console (crear con estos mismos IDs). Precios base en USD; los precios locales (incluida Colombia) se fijan en Play Console.",
+ "piggyCapacity": 2500,
+ "products": [
+  {
+   "id": "tesela_no_ads",
+   "key": "no_ads",
+   "type": "nonconsumable",
+   "priceUsd": 3.99,
+   "removesAds": true,
+   "content": {
+    "protectors": 3
+   }
+  },
+  {
+   "id": "tesela_starter_pack",
+   "key": "starter",
+   "type": "consumable",
+   "priceUsd": 1.99,
+   "starterPack": true,
+   "offerHours": 48,
+   "content": {
+    "coins": 500,
+    "boosters": {
+     "undo": 1,
+     "rotate": 1,
+     "hammer": 1,
+     "broom": 1,
+     "newtray": 1
+    },
+    "cosmetic": "theme_cobalto_antiguo"
+   }
+  },
+  {
+   "id": "tesela_piggy",
+   "key": "piggy",
+   "type": "consumable",
+   "priceUsd": 2.99,
+   "piggy": true,
+   "content": {}
+  },
+  {
+   "id": "tesela_pass",
+   "key": "pass",
+   "type": "consumable",
+   "priceUsd": 4.99,
+   "pass": true,
+   "content": {}
+  },
+  {
+   "id": "tesela_pass_plus",
+   "key": "pass_plus",
+   "type": "consumable",
+   "priceUsd": 9.99,
+   "passPlus": true,
+   "content": {
+    "passXp": 4500
+   }
+  },
+  {
+   "id": "tesela_club_monthly",
+   "key": "club",
+   "type": "subscription",
+   "priceUsd": 4.99,
+   "periodDays": 30,
+   "club": true,
+   "content": {}
+  },
+  {
+   "id": "tesela_coins_1",
+   "key": "coins_1",
+   "type": "consumable",
+   "priceUsd": 0.99,
+   "bonusPercent": 0,
+   "content": {
+    "coins": 300
+   }
+  },
+  {
+   "id": "tesela_coins_2",
+   "key": "coins_2",
+   "type": "consumable",
+   "priceUsd": 2.99,
+   "bonusPercent": 10,
+   "content": {
+    "coins": 1000
+   }
+  },
+  {
+   "id": "tesela_coins_3",
+   "key": "coins_3",
+   "type": "consumable",
+   "priceUsd": 4.99,
+   "bonusPercent": 20,
+   "content": {
+    "coins": 1800
+   }
+  },
+  {
+   "id": "tesela_coins_4",
+   "key": "coins_4",
+   "type": "consumable",
+   "priceUsd": 9.99,
+   "bonusPercent": 30,
+   "content": {
+    "coins": 4000
+   }
+  },
+  {
+   "id": "tesela_coins_5",
+   "key": "coins_5",
+   "type": "consumable",
+   "priceUsd": 19.99,
+   "bonusPercent": 40,
+   "content": {
+    "coins": 9000
+   }
+  },
+  {
+   "id": "tesela_coins_6",
+   "key": "coins_6",
+   "type": "consumable",
+   "priceUsd": 99.99,
+   "bonusPercent": 50,
+   "content": {
+    "coins": 50000
+   }
+  },
+  {
+   "id": "tesela_boosters_small",
+   "key": "boosters_small",
+   "type": "consumable",
+   "priceUsd": 1.99,
+   "content": {
+    "boosters": {
+     "undo": 2,
+     "rotate": 2,
+     "hammer": 1
+    }
+   }
+  },
+  {
+   "id": "tesela_boosters_medium",
+   "key": "boosters_medium",
+   "type": "consumable",
+   "priceUsd": 4.99,
+   "content": {
+    "boosters": {
+     "undo": 4,
+     "rotate": 4,
+     "hammer": 3,
+     "broom": 2,
+     "newtray": 2
+    }
+   }
+  },
+  {
+   "id": "tesela_boosters_large",
+   "key": "boosters_large",
+   "type": "consumable",
+   "priceUsd": 9.99,
+   "content": {
+    "boosters": {
+     "undo": 8,
+     "rotate": 8,
+     "hammer": 6,
+     "broom": 5,
+     "newtray": 5,
+     "reserve": 4
+    }
+   }
+  },
+  {
+   "id": "tesela_cosmetic_patio_terracota",
+   "key": "cos_patio",
+   "type": "nonconsumable",
+   "priceUsd": 1.99,
+   "content": {
+    "cosmetic": "patio_terracota"
+   }
+  },
+  {
+   "id": "tesela_cosmetic_fx_azahar",
+   "key": "cos_fx",
+   "type": "nonconsumable",
+   "priceUsd": 2.99,
+   "content": {
+    "cosmetic": "fx_azahar"
+   }
+  },
+  {
+   "id": "tesela_cosmetic_sound_marimba",
+   "key": "cos_sound",
+   "type": "nonconsumable",
+   "priceUsd": 3.99,
+   "content": {
+    "cosmetic": "sound_marimba_alta"
+   }
+  }
+ ]
+}

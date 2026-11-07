@@ -1,0 +1,112 @@
+{
+ "_comment": "Valores por defecto locales de Remote Config. El juego funciona completo sin red con estos valores.",
+ "ads": {
+  "rewardedDailyCap": 20,
+  "freeBoosterDailyCap": 5,
+  "blockFirstSession": true,
+  "minGamesBeforeFirstInterstitial": 3,
+  "minSecondsBetweenInterstitials": 150,
+  "minGamesBetweenInterstitials": 2,
+  "cooldownAfterRewardedSeconds": 120,
+  "noInterstitialHoursAfterPurchase": 24,
+  "sdkTimeoutSeconds": 5,
+  "bannerEnabled": true,
+  "reviveCoinPrice": 300
+ },
+ "offers": {
+  "minGamesInSession": 2,
+  "rules": [
+   {
+    "id": "starter_engaged",
+    "segment": "engaged_nonpayer",
+    "moments": [
+     "chapter_complete",
+     "new_best",
+     "pass_tier"
+    ],
+    "product": "starter",
+    "minAgeDays": 3,
+    "priority": 10
+   },
+   {
+    "id": "pass_first_payer",
+    "segment": "first_payer",
+    "moments": [
+     "pass_tier",
+     "chapter_complete"
+    ],
+    "product": "pass",
+    "priority": 8
+   },
+   {
+    "id": "pass_repeat",
+    "segment": "repeat",
+    "moments": [
+     "pass_tier",
+     "new_best"
+    ],
+    "product": "pass_plus",
+    "priority": 7
+   },
+   {
+    "id": "club_whale",
+    "segment": "whale",
+    "moments": [
+     "chapter_complete",
+     "new_best"
+    ],
+    "product": "club",
+    "priority": 6
+   },
+   {
+    "id": "gift_return",
+    "segment": "at_risk",
+    "moments": [
+     "return"
+    ],
+    "gift": "return_gift",
+    "priority": 20
+   }
+  ]
+ },
+ "returnGift": {
+  "coins": 200,
+  "boosters": {
+   "undo": 1,
+   "hammer": 1
+  }
+ },
+ "events": {
+  "active": "giro_libre",
+  "list": [
+   {
+    "id": "giro_libre",
+    "nameKey": "event.free_rotation",
+    "freeRotation": true
+   },
+   {
+    "id": "patio_grande",
+    "nameKey": "event.regions",
+    "boardWidth": 9,
+    "boardHeight": 9,
+    "regions3x3": true
+   },
+   {
+    "id": "bombas",
+    "nameKey": "event.bombs",
+    "bombEveryMoves": 7,
+    "bombCountdown": 9
+   },
+   {
+    "id": "azulejos_dorados",
+    "nameKey": "event.golden",
+    "goldenPieceChance": 0.15
+   }
+  ]
+ },
+ "features": {
+  "relaxedModeVisible": true,
+  "sessionReminderMinutes": 45,
+  "reviewAfterGames": 8
+ }
+}
