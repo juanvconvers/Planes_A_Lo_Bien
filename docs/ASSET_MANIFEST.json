@@ -1,0 +1,837 @@
+{
+ "_comment": "Manifiesto de huecos visuales para la Fase 10. Cada PNG se suelta en ArtDrop/<id>.png al DOBLE del tamaño (o al tamaño exacto). Los que piden alfa se generan sobre croma #00FF00 (o #FF00FF si el objeto es verde/turquesa).",
+ "version": 1,
+ "assets": [
+  {
+   "id": "tile_cobalto",
+   "use": "Azulejo esmaltado cobalto con patrón estrella (pieza y tablero)",
+   "destination": "Assets/_Tesela/Art/Final/Tiles/tile_cobalto.png",
+   "width": 256,
+   "height": 256,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 1,
+   "themeField": "tileTextures[0]",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "tile_ocre",
+   "use": "Azulejo esmaltado ocre con patrón flor (pieza y tablero)",
+   "destination": "Assets/_Tesela/Art/Final/Tiles/tile_ocre.png",
+   "width": 256,
+   "height": 256,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 1,
+   "themeField": "tileTextures[1]",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "tile_oliva",
+   "use": "Azulejo esmaltado oliva con patrón rombo (pieza y tablero)",
+   "destination": "Assets/_Tesela/Art/Final/Tiles/tile_oliva.png",
+   "width": 256,
+   "height": 256,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 1,
+   "themeField": "tileTextures[2]",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "tile_coral",
+   "use": "Azulejo esmaltado coral con patrón onda (pieza y tablero)",
+   "destination": "Assets/_Tesela/Art/Final/Tiles/tile_coral.png",
+   "width": 256,
+   "height": 256,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 1,
+   "themeField": "tileTextures[3]",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "tile_turquesa",
+   "use": "Azulejo esmaltado turquesa con patrón punto (pieza y tablero)",
+   "destination": "Assets/_Tesela/Art/Final/Tiles/tile_turquesa.png",
+   "width": 256,
+   "height": 256,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 1,
+   "themeField": "tileTextures[4]",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "tile_ciruela",
+   "use": "Azulejo esmaltado ciruela con patrón cruz (pieza y tablero)",
+   "destination": "Assets/_Tesela/Art/Final/Tiles/tile_ciruela.png",
+   "width": 256,
+   "height": 256,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 1,
+   "themeField": "tileTextures[5]",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "tile_socket",
+   "use": "Casilla vacía del patio (baldosa de arena hundida)",
+   "destination": "Assets/_Tesela/Art/Final/Tiles/tile_socket.png",
+   "width": 256,
+   "height": 256,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 1,
+   "themeField": "socketTexture",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "frame_panel",
+   "use": "Marco 9-slice de cerámica para paneles",
+   "destination": "Assets/_Tesela/Art/Final/Frames/frame_panel.png",
+   "width": 512,
+   "height": 512,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": [
+    64,
+    64,
+    64,
+    64
+   ],
+   "priority": 1,
+   "themeField": "panelFrame",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "frame_button_primary",
+   "use": "Marco 9-slice de botón principal (cobalto)",
+   "destination": "Assets/_Tesela/Art/Final/Frames/frame_button_primary.png",
+   "width": 512,
+   "height": 512,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": [
+    64,
+    64,
+    64,
+    64
+   ],
+   "priority": 1,
+   "themeField": "buttonPrimaryFrame",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "frame_button_secondary",
+   "use": "Marco 9-slice de botón secundario (arena)",
+   "destination": "Assets/_Tesela/Art/Final/Frames/frame_button_secondary.png",
+   "width": 512,
+   "height": 512,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": [
+    64,
+    64,
+    64,
+    64
+   ],
+   "priority": 2,
+   "themeField": "buttonSecondaryFrame",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "background_patio",
+   "use": "Fondo vertical del patio de baldosas",
+   "destination": "Assets/_Tesela/Art/Final/Backgrounds/background_patio.png",
+   "width": 1080,
+   "height": 1920,
+   "alpha": false,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 2,
+   "themeField": "background",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "mosaic_plaza",
+   "use": "Mosaico del capítulo 1: la plaza del pueblo con su kiosco",
+   "destination": "Assets/_Tesela/Art/Final/Mosaics/mosaic_plaza.png",
+   "width": 760,
+   "height": 456,
+   "alpha": false,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 2,
+   "themeField": "mosaics[0]",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "mosaic_fuente",
+   "use": "Mosaico del capítulo 2: la fuente de la plaza con agua",
+   "destination": "Assets/_Tesela/Art/Final/Mosaics/mosaic_fuente.png",
+   "width": 760,
+   "height": 456,
+   "alpha": false,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 2,
+   "themeField": "mosaics[1]",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "mosaic_capilla",
+   "use": "Mosaico del capítulo 3: la fachada de la capilla con su campanario",
+   "destination": "Assets/_Tesela/Art/Final/Mosaics/mosaic_capilla.png",
+   "width": 760,
+   "height": 456,
+   "alpha": false,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 2,
+   "themeField": "mosaics[2]",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "icon_play",
+   "use": "Icono de interfaz 'play' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_play.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:play",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_back",
+   "use": "Icono de interfaz 'back' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_back.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:back",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_close",
+   "use": "Icono de interfaz 'close' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_close.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:close",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_settings",
+   "use": "Icono de interfaz 'settings' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_settings.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:settings",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_shop",
+   "use": "Icono de interfaz 'shop' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_shop.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:shop",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_coin",
+   "use": "Icono de interfaz 'coin' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_coin.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:coin",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_tile",
+   "use": "Icono de interfaz 'tile' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_tile.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:tile",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_star",
+   "use": "Icono de interfaz 'star' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_star.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:star",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_undo",
+   "use": "Icono de interfaz 'undo' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_undo.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:undo",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_rotate",
+   "use": "Icono de interfaz 'rotate' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_rotate.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:rotate",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_hammer",
+   "use": "Icono de interfaz 'hammer' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_hammer.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:hammer",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_broom",
+   "use": "Icono de interfaz 'broom' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_broom.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:broom",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_newtray",
+   "use": "Icono de interfaz 'newtray' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_newtray.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:newtray",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_reserve",
+   "use": "Icono de interfaz 'reserve' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_reserve.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:reserve",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_trophy",
+   "use": "Icono de interfaz 'trophy' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_trophy.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:trophy",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_calendar",
+   "use": "Icono de interfaz 'calendar' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_calendar.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:calendar",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_zen",
+   "use": "Icono de interfaz 'zen' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_zen.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:zen",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_album",
+   "use": "Icono de interfaz 'album' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_album.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:album",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_pass",
+   "use": "Icono de interfaz 'pass' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_pass.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:pass",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_sound",
+   "use": "Icono de interfaz 'sound' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_sound.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:sound",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_music",
+   "use": "Icono de interfaz 'music' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_music.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:music",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_vibration",
+   "use": "Icono de interfaz 'vibration' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_vibration.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:vibration",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_check",
+   "use": "Icono de interfaz 'check' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_check.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:check",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_lock",
+   "use": "Icono de interfaz 'lock' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_lock.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:lock",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_gift",
+   "use": "Icono de interfaz 'gift' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_gift.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:gift",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_info",
+   "use": "Icono de interfaz 'info' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_info.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:info",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_crown",
+   "use": "Icono de interfaz 'crown' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_crown.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:crown",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_chest",
+   "use": "Icono de interfaz 'chest' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_chest.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:chest",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_home",
+   "use": "Icono de interfaz 'home' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_home.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:home",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_flame",
+   "use": "Icono de interfaz 'flame' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_flame.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:flame",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_shield",
+   "use": "Icono de interfaz 'shield' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_shield.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:shield",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_ad",
+   "use": "Icono de interfaz 'ad' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_ad.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:ad",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_restore",
+   "use": "Icono de interfaz 'restore' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_restore.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:restore",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_heart",
+   "use": "Icono de interfaz 'heart' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_heart.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:heart",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "icon_hand",
+   "use": "Icono de interfaz 'hand' (trazo uniforme, blanco sobre transparente; se tiñe en el juego)",
+   "destination": "Assets/_Tesela/Art/Final/Icons/icon_hand.png",
+   "width": 192,
+   "height": 192,
+   "alpha": true,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 3,
+   "themeField": "icons:hand",
+   "model": "Nano Banana 2"
+  },
+  {
+   "id": "app_icon",
+   "use": "Icono de la app para Google Play y el lanzador",
+   "destination": "Assets/_Tesela/Art/Final/Store/app_icon.png",
+   "width": 512,
+   "height": 512,
+   "alpha": false,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 1,
+   "themeField": "store:icon",
+   "model": "Nano Banana Pro"
+  },
+  {
+   "id": "feature_graphic",
+   "use": "Gráfico destacado de Google Play",
+   "destination": "Assets/_Tesela/Art/Final/Store/feature_graphic.png",
+   "width": 1024,
+   "height": 500,
+   "alpha": false,
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "nineSliceBorder": null,
+   "priority": 1,
+   "themeField": "store:feature",
+   "model": "Nano Banana Pro"
+  }
+ ]
+}

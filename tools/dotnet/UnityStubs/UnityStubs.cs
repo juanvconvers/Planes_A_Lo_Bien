@@ -105,3 +105,10 @@ namespace TMPro
         public static void ImportResources(bool importEssentials, bool importExamples, bool interactive) { }
     }
 }
+
+namespace UnityEngine.TestTools
+{
+    [AttributeUsage(AttributeTargets.Method)] public class UnityTestAttribute : Attribute { }
+    [AttributeUsage(AttributeTargets.Method)] public class UnitySetUpAttribute : Attribute { }
+    [AttributeUsage(AttributeTargets.Method)] public class UnityTearDownAttribute : Attribute { }
+}

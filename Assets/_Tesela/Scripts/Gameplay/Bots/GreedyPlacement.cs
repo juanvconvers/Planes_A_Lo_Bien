@@ -21,6 +21,40 @@ namespace Tesela.Gameplay.Bots
             return lines * 40 + contacts * 2 - holes * 9 + shape.CellCount;
         }
 
+        /// <summary>Bonificación por celdas de objetivo (agrietadas, barro, esmalte buscado) en las líneas que se completarían.</summary>
+        public static int ObjectiveBonus(Board board, PieceShape shape, int x, int y, byte targetGlaze)
+        {
+            int bonus = 0;
+            for (int r = 0; r < shape.Height; r++)
+            {
+                int row = y + r;
+                if ((board.RowMask(row) | (shape.RowMasks[r] << x)) != (1 << board.Width) - 1) continue;
+                for (int cx = 0; cx < board.Width; cx++) bonus += CellValue(board, cx, row, targetGlaze);
+            }
+            for (int c = 0; c < shape.Width; c++)
+            {
+                int col = x + c;
+                bool full = true;
+                for (int row = 0; row < board.Height && full; row++)
+                {
+                    int sr = row - y;
+                    bool inShape = sr >= 0 && sr < shape.Height && (shape.RowMasks[sr] & (1 << c)) != 0;
+                    full = inShape || board.IsOccupied(col, row);
+                }
+                if (!full) continue;
+                for (int row = 0; row < board.Height; row++) bonus += CellValue(board, col, row, targetGlaze);
+            }
+            return bonus;
+        }
+
+        private static int CellValue(Board b, int x, int y, byte targetGlaze)
+        {
+            if (!b.IsOccupied(x, y)) return 0;
+            var m = b.GetModifier(x, y);
+            if (m == CellModifier.Cracked || m == CellModifier.Mud) return 30;
+            return targetGlaze != 0 && b.GetGlaze(x, y) == targetGlaze ? 6 : 0;
+        }
+
         private static bool InShape(PieceShape s, int ox, int oy, int x, int y)
         {
             int sx = x - ox, sy = y - oy;
@@ -104,10 +138,24 @@ namespace Tesela.Gameplay.Bots
         private Pcg32 _rng;
         private readonly int _noise;
 
-        public GreedyBot(ulong seed = 1, int noise = 0)
+        private readonly bool _objectiveAware;
+
+        public GreedyBot(ulong seed = 1, int noise = 0, bool objectiveAware = false)
         {
             _rng = new Pcg32(seed, 0x6EEDUL);
             _noise = noise;
+            _objectiveAware = objectiveAware;
+        }
+
+        private static byte TargetGlaze(GameSession s)
+        {
+            if (s.Objectives == null) return 0;
+            for (int i = 0; i < s.Objectives.Definitions.Count; i++)
+            {
+                var d = s.Objectives.Definitions[i];
+                if (d.Type == ObjectiveType.CollectGlaze && s.Objectives.Progress[i] < d.Target) return d.Glaze;
+            }
+            return 0;
         }
 
         public bool Choose(GameSession s, out int slot, out int x, out int y)
@@ -115,6 +163,8 @@ namespace Tesela.Gameplay.Bots
             slot = x = y = -1;
             int best = int.MinValue;
             int ties = 0;
+            bool aware = _objectiveAware && s.Objectives != null;
+            byte glaze = aware ? TargetGlaze(s) : (byte)0;
             for (int i = 0; i < s.Tray.Length; i++)
             {
                 if (s.Tray[i].IsEmpty) continue;
@@ -124,6 +174,7 @@ namespace Tesela.Gameplay.Bots
                     {
                         if (!s.Board.CanPlace(shape, px, py)) continue;
                         int v = GreedyPlacement.Evaluate(s.Board, shape, px, py);
+                        if (aware) v += GreedyPlacement.ObjectiveBonus(s.Board, shape, px, py, glaze);
                         if (_noise > 0) v += _rng.NextInt(_noise + 1);
                         if (v > best)
                         {

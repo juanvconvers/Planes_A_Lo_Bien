@@ -27,6 +27,9 @@ namespace Tesela.UI
         public static Navigator Navigator => _instance != null ? _instance._nav : null;
         public static bool Ready { get; private set; }
 
+        /// <summary>Carpeta de guardado alternativa (tests PlayMode: no tocan el progreso real del editor).</summary>
+        public static string SaveDirectoryOverride;
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Boot()
         {
@@ -63,7 +66,7 @@ namespace Tesela.UI
         private AppContext CreateContext()
         {
             var ids = ExternalIds.Instance;
-            var store = new FileStore();
+            var store = new FileStore(SaveDirectoryOverride);
             var saves = new SaveSystem(store);
             var data = GameData.Load();
             var profile = saves.LoadProfile();

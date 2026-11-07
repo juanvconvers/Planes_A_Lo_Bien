@@ -119,3 +119,69 @@ namespace Tesela.Tests
         }
     }
 }
+
+namespace Tesela.Tests
+{
+    public class ShippedLevelsTests
+    {
+        private static System.Collections.Generic.List<LevelDefinition> All()
+        {
+            var list = new System.Collections.Generic.List<LevelDefinition>();
+            for (int ch = 1; ch <= 3; ch++) list.AddRange(LevelDefinition.ListFromJson(TestData.Read("Assets/_Tesela/Data/Levels/Resources/Levels/chapter" + ch + ".json")));
+            return list;
+        }
+
+        [Test]
+        public void SixtyLevelsInThreeChaptersWithUniqueIds()
+        {
+            var all = All();
+            Assert.AreEqual(60, all.Count);
+            Assert.AreEqual(60, all.Select(l => l.Id).Distinct().Count());
+            for (int ch = 1; ch <= 3; ch++) Assert.AreEqual(20, all.Count(l => l.Chapter == ch));
+            foreach (var l in all)
+            {
+                var b = new Board(l.Width, l.Height);
+                b.LoadRows(l.Rows);
+                Assert.AreEqual(0, b.ClearCompletedLines(null).Lines, l.Id + ": el tablero inicial no debe tener líneas llenas");
+                Assert.That(l.ThreeStarMovesLeft, Is.GreaterThan(l.TwoStarMovesLeft), l.Id);
+            }
+        }
+
+        /// <summary>Criterio de cierre de la Fase 5: los 60 niveles superan el validador (≥ 70 % resolubles).</summary>
+        [Test]
+        public void AllShippedLevelsPassTheValidator()
+        {
+            foreach (var l in All())
+            {
+                var v = LevelValidator.Validate(l, TestData.Scoring, TestData.Catalog, 60);
+                Assert.That(v.Solvability, Is.GreaterThanOrEqualTo(LevelValidator.MinSolvability), l.Id);
+            }
+        }
+
+        [Test]
+        public void GeneratorProducesValidLevelAndPercentileHelper()
+        {
+            var l = LevelGenerator.Generate(2, 3, TestData.Scoring, TestData.Catalog);
+            Assert.AreEqual("c2_l03", l.Id);
+            Assert.That(l.Solvability, Is.GreaterThanOrEqualTo(LevelValidator.MinSolvability));
+            Assert.AreEqual(0, LevelValidator.Percentile(null, 0.5f));
+            Assert.AreEqual(5, LevelValidator.Percentile(new[] { 1, 5, 9 }, 0.5f));
+            var hopeless = LevelDefinition.FromJson(Json.ParseNode("{\"id\":\"x\",\"seed\":1,\"moves\":1,\"objectives\":[{\"type\":\"score\",\"target\":999999}]}"));
+            var v = LevelValidator.Validate(hopeless, TestData.Scoring, TestData.Catalog, 5);
+            Assert.AreEqual(0f, v.Solvability);
+            Assert.IsFalse(v.GreedySolves);
+            Assert.AreEqual(1, hopeless.MoveLimit, "el validador restaura el límite");
+        }
+
+        [Test]
+        public void ObjectiveAwareBotPrefersObjectiveLines()
+        {
+            var b = new Board();
+            for (int x = 0; x < 7; x++) b.SetCell(x, 7, 1, x == 0 ? CellModifier.Cracked : CellModifier.None, 1);
+            var mono = TestData.Shape("X");
+            Assert.That(Tesela.Gameplay.Bots.GreedyPlacement.ObjectiveBonus(b, mono, 7, 7, 0), Is.GreaterThanOrEqualTo(30));
+            Assert.AreEqual(0, Tesela.Gameplay.Bots.GreedyPlacement.ObjectiveBonus(b, mono, 0, 0, 0));
+            Assert.That(Tesela.Gameplay.Bots.GreedyPlacement.ObjectiveBonus(b, mono, 7, 7, 1), Is.GreaterThan(30));
+        }
+    }
+}

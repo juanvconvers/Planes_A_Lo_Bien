@@ -44,6 +44,19 @@ namespace Tesela.UI
         /// <summary>Mosaico de 8×6 azulejos con un dibujo determinista por capítulo; se revela en orden según el progreso.</summary>
         private void DrawMosaic(RectTransform card, int chapter, float progress)
         {
+            var theme = Theme.Instance;
+            if (theme.useTextures && theme.mosaics != null && chapter - 1 < theme.mosaics.Length && theme.mosaics[chapter - 1] != null)
+            {
+                // Arte final: el mosaico se descubre de abajo arriba según el progreso.
+                var art = Ui.Rect(card, "mosaicArt");
+                art.Place(0.5f, 0.45f, 760, 456, 0, -20);
+                art.gameObject.AddComponent<UnityEngine.UI.RawImage>().texture = theme.mosaics[chapter - 1];
+                var veil = Ui.Image(art, "veil", Ui.Art.White, Palette.SandDeep.ToColor(0.92f));
+                veil.rectTransform.anchorMin = new Vector2(0, progress);
+                veil.rectTransform.anchorMax = Vector2.one;
+                veil.rectTransform.offsetMin = veil.rectTransform.offsetMax = Vector2.zero;
+                return;
+            }
             const int cols = 10, rows = 6;
             float size = 76;
             var grid = Ui.Rect(card, "mosaic");

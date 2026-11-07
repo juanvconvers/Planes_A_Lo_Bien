@@ -1,0 +1,686 @@
+{
+  "_comment": "Generado por tools/dotnet/Tesela.Tools (levels). Editable a mano o con Tesela > Editor de niveles; vuelve a validar.",
+  "chapter": 2,
+  "levels": [
+    {
+      "id": "c2_l01",
+      "chapter": 2,
+      "index": 1,
+      "seed": "48599082254",
+      "width": 8,
+      "height": 8,
+      "moves": 54,
+      "stars": [
+        22,
+        29
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 3
+        },
+        {
+          "type": "mud",
+          "target": 3
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "......5m",
+        "3..CC...",
+        "....C..1",
+        "...2....",
+        "........",
+        "...mm.5."
+      ],
+      "solvability": 0.8
+    },
+    {
+      "id": "c2_l02",
+      "chapter": 2,
+      "index": 2,
+      "seed": "369173382051",
+      "width": 8,
+      "height": 8,
+      "moves": 72,
+      "stars": [
+        30,
+        37
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "...CC...",
+        "........",
+        "....5...",
+        ".61.....",
+        "6m....m.",
+        ".......3"
+      ],
+      "solvability": 0.85
+    },
+    {
+      "id": "c2_l03",
+      "chapter": 2,
+      "index": 3,
+      "seed": "929816425092",
+      "width": 8,
+      "height": 8,
+      "moves": 79,
+      "stars": [
+        38,
+        50
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        ".....2..",
+        "...5....",
+        ".1.mm...",
+        ".C....C.",
+        "........",
+        "...3...."
+      ],
+      "solvability": 0.8
+    },
+    {
+      "id": "c2_l04",
+      "chapter": 2,
+      "index": 4,
+      "seed": "1038580166638",
+      "width": 8,
+      "height": 8,
+      "moves": 69,
+      "stars": [
+        29,
+        35
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        ".2..1...",
+        "........",
+        ".C......",
+        "..m...C.",
+        "....2..m",
+        "5......."
+      ],
+      "solvability": 0.817
+    },
+    {
+      "id": "c2_l05",
+      "chapter": 2,
+      "index": 5,
+      "seed": "544018347400",
+      "width": 8,
+      "height": 8,
+      "moves": 69,
+      "stars": [
+        31,
+        41
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "........",
+        "2.C..C..",
+        "..26....",
+        "...mm.1.",
+        "...3....",
+        "........"
+      ],
+      "solvability": 0.817
+    },
+    {
+      "id": "c2_l06",
+      "chapter": 2,
+      "index": 6,
+      "seed": "270441971627",
+      "width": 8,
+      "height": 8,
+      "moves": 53,
+      "stars": [
+        19,
+        27
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 3
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        ".1......",
+        "6m2...m.",
+        "..6.....",
+        "....5...",
+        "...CC...",
+        ".......C"
+      ],
+      "solvability": 0.8
+    },
+    {
+      "id": "c2_l07",
+      "chapter": 2,
+      "index": 7,
+      "seed": "745394444708",
+      "width": 8,
+      "height": 8,
+      "moves": 22,
+      "stars": [
+        9,
+        14
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 1
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        ".......1",
+        "......1.",
+        "........",
+        "........",
+        "Cm4....C",
+        ".......4"
+      ],
+      "solvability": 0.817
+    },
+    {
+      "id": "c2_l08",
+      "chapter": 2,
+      "index": 8,
+      "seed": "492643571336",
+      "width": 8,
+      "height": 8,
+      "moves": 47,
+      "stars": [
+        22,
+        27
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 3
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "........",
+        "3C...5C3",
+        "3.......",
+        ".m......",
+        ".m....m3",
+        "........"
+      ],
+      "solvability": 0.817
+    },
+    {
+      "id": "c2_l09",
+      "chapter": 2,
+      "index": 9,
+      "seed": "1071459735136",
+      "width": 8,
+      "height": 8,
+      "moves": 60,
+      "stars": [
+        14,
+        27
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 3
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "C....5..",
+        "..C..C..",
+        "6.......",
+        "m.2....m",
+        "56......",
+        "........"
+      ],
+      "solvability": 0.833
+    },
+    {
+      "id": "c2_l10",
+      "chapter": 2,
+      "index": 10,
+      "seed": "685339119876",
+      "width": 8,
+      "height": 8,
+      "moves": 61,
+      "stars": [
+        29,
+        36
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 3
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        ".....56.",
+        ".C...m4.",
+        "........",
+        "........",
+        "..3...5.",
+        ".....mCC"
+      ],
+      "solvability": 0.8
+    },
+    {
+      "id": "c2_l11",
+      "chapter": 2,
+      "index": 11,
+      "seed": "762445676180",
+      "width": 8,
+      "height": 8,
+      "moves": 44,
+      "stars": [
+        16,
+        25
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "......5.",
+        "33...6..",
+        ".m....m.",
+        "........",
+        "........",
+        "..4CC..."
+      ],
+      "solvability": 0.883
+    },
+    {
+      "id": "c2_l12",
+      "chapter": 2,
+      "index": 12,
+      "seed": "82243114252",
+      "width": 8,
+      "height": 8,
+      "moves": 62,
+      "stars": [
+        34,
+        41
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 3
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "1..CC...",
+        "5m.3..m.",
+        ".3......",
+        "........",
+        ".m......",
+        "......3."
+      ],
+      "solvability": 0.8
+    },
+    {
+      "id": "c2_l13",
+      "chapter": 2,
+      "index": 13,
+      "seed": "403162858462",
+      "width": 8,
+      "height": 8,
+      "moves": 32,
+      "stars": [
+        10,
+        19
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 3
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "........",
+        "..mmm...",
+        ".....3..",
+        "........",
+        "C45....C",
+        "5.....3."
+      ],
+      "solvability": 0.85
+    },
+    {
+      "id": "c2_l14",
+      "chapter": 2,
+      "index": 14,
+      "seed": "319460207965",
+      "width": 8,
+      "height": 8,
+      "moves": 57,
+      "stars": [
+        20,
+        34
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 3
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "..3mm...",
+        "..24....",
+        "......C.",
+        "...CC...",
+        "......3.",
+        "........"
+      ],
+      "solvability": 0.833
+    },
+    {
+      "id": "c2_l15",
+      "chapter": 2,
+      "index": 15,
+      "seed": "148387270687",
+      "width": 8,
+      "height": 8,
+      "moves": 44,
+      "stars": [
+        22,
+        30
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 3
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "........",
+        ".4...4..",
+        "...mm...",
+        "......3.",
+        "2.......",
+        "2m.CC..."
+      ],
+      "solvability": 0.833
+    },
+    {
+      "id": "c2_l16",
+      "chapter": 2,
+      "index": 16,
+      "seed": "348046804664",
+      "width": 8,
+      "height": 8,
+      "moves": 68,
+      "stars": [
+        35,
+        43
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 4
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        ".3C3.C..",
+        "..C..C.4",
+        "........",
+        "........",
+        "m6....5m",
+        "....6..."
+      ],
+      "solvability": 0.817
+    },
+    {
+      "id": "c2_l17",
+      "chapter": 2,
+      "index": 17,
+      "seed": "132629995441",
+      "width": 8,
+      "height": 8,
+      "moves": 43,
+      "stars": [
+        15,
+        20
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 4
+        },
+        {
+          "type": "mud",
+          "target": 4
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        ".......2",
+        ".2...5..",
+        "..5.63..",
+        "C.C..C.C",
+        "..mmmm..",
+        "...4...."
+      ],
+      "solvability": 0.833
+    },
+    {
+      "id": "c2_l18",
+      "chapter": 2,
+      "index": 18,
+      "seed": "938259105267",
+      "width": 8,
+      "height": 8,
+      "moves": 55,
+      "stars": [
+        17,
+        28
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "....6.5.",
+        "...CC...",
+        ".2m..m1."
+      ],
+      "solvability": 0.85
+    },
+    {
+      "id": "c2_l19",
+      "chapter": 2,
+      "index": 19,
+      "seed": "458763887555",
+      "width": 8,
+      "height": 8,
+      "moves": 59,
+      "stars": [
+        27,
+        37
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 2
+        },
+        {
+          "type": "mud",
+          "target": 2
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "m.C....C",
+        ".2...5..",
+        "...m....",
+        "2..1....",
+        "........",
+        "6......."
+      ],
+      "solvability": 0.8
+    },
+    {
+      "id": "c2_l20",
+      "chapter": 2,
+      "index": 20,
+      "seed": "1085212021741",
+      "width": 8,
+      "height": 8,
+      "moves": 69,
+      "stars": [
+        24,
+        37
+      ],
+      "objectives": [
+        {
+          "type": "cracked",
+          "target": 4
+        },
+        {
+          "type": "mud",
+          "target": 3
+        }
+      ],
+      "rows": [
+        "........",
+        "........",
+        "...32...",
+        "C2......",
+        "mm.C6...",
+        "..2C2...",
+        "....C.m.",
+        "......5."
+      ],
+      "solvability": 0.8
+    }
+  ]
+}
